@@ -1,0 +1,15 @@
+import 'package:flutter/material.dart';
+
+class HomeUiScreen extends StatefulWidget {
+  const HomeUiScreen({super.key});
+
+  @override
+  State<HomeUiScreen> createState() => _HomeUiScreenState();
+}
+
+class _HomeUiScreenState extends State<HomeUiScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold();
+  }
+}
