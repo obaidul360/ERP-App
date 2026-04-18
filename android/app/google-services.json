@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "435691774326",
+    "project_id": "erp-apps-6396f",
+    "storage_bucket": "erp-apps-6396f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435691774326:android:c965098adc0a01eff71a57",
+        "android_client_info": {
+          "package_name": "com.example.erp_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANxYQtqMfArqy-oxQdT90R-UKDxhSGUK0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
