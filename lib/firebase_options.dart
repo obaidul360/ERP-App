@@ -85,5 +85,4 @@ class DefaultFirebaseOptions {
     projectId: 'erp-apps-6396f',
     storageBucket: 'erp-apps-6396f.firebasestorage.app',
   );
-
 }
