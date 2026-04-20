@@ -13,15 +13,18 @@ class _ForTestScreenState extends State<ForTestScreen> {
     return Scaffold(
       appBar: AppBar(title: Text("For test")),
       backgroundColor: Colors.blue,
-      body: Column(children: [Text("Text"), Text("Body"),
+      body: Column(
+        children: [
+          Text("Text"),
+          Text("Body"),
 
-      SizedBox(
-        child: Column(
-          children: [
-            Text("Size Box");
-          ],
-        ),
-      )]),
+          SizedBox(height: 140, child: Column(children: [Text("Size Box")])),
+          SizedBox(
+            height: 200,
+            child: Column(children: [Text("2nd Size Box")]),
+          ),
+        ],
+      ),
     );
   }
 }
