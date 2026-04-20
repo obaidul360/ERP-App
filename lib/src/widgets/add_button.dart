@@ -23,25 +23,21 @@ class _AddButtonScreenState extends State<AddButtonScreen> {
     databaseURL:
         "https://erp-apps-6396f-default-rtdb.asia-southeast1.firebasedatabase.app",
   ).ref("users");
-
   @override
   void initState() {
     super.initState();
-
     // Edit mode => data pre-fill
     if (widget.userKey != null) {
       nameCon.text = widget.name ?? "";
       emailCon.text = widget.email ?? "";
     }
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.userKey == null ? "Add User" : "Edit User"),
       ),
-
       body: Padding(
         padding: const EdgeInsets.all(12),
         child: Column(
@@ -53,9 +49,7 @@ class _AddButtonScreenState extends State<AddButtonScreen> {
                 border: OutlineInputBorder(),
               ),
             ),
-
             const SizedBox(height: 10),
-
             TextField(
               controller: emailCon,
               decoration: const InputDecoration(
@@ -63,9 +57,7 @@ class _AddButtonScreenState extends State<AddButtonScreen> {
                 border: OutlineInputBorder(),
               ),
             ),
-
             const SizedBox(height: 10),
-
             ElevatedButton(
               onPressed: () {
                 if (nameCon.text.isEmpty || emailCon.text.isEmpty) {
@@ -74,7 +66,6 @@ class _AddButtonScreenState extends State<AddButtonScreen> {
                   );
                   return;
                 }
-
                 if (widget.userKey == null) {
                   //ADD
                   dbRef.push().set({
@@ -88,7 +79,6 @@ class _AddButtonScreenState extends State<AddButtonScreen> {
                     "email": emailCon.text.trim(),
                   });
                 }
-
                 Navigator.pop(context);
               },
               child: Text(widget.userKey == null ? "Add" : "Update"),

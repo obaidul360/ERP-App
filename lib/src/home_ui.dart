@@ -50,78 +50,97 @@ class _HomeUiScreenState extends State<HomeUiScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("User List")),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Color(0xFFB0E743),
+        appBar: AppBar(
+          backgroundColor: Color(0x5CED8F4F),
+          centerTitle: true,
+          title: const Text("User List"),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const AddButtonScreen()),
+            );
+          },
+          child: const Icon(Icons.add),
+        ),
 
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (_) => const AddButtonScreen()),
-          );
-        },
-        child: const Icon(Icons.add),
-      ),
+        body: Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: StreamBuilder<DatabaseEvent>(
+            stream: dbRef.onValue,
+            builder: (context, snapshot) {
+              if (!snapshot.hasData || snapshot.data!.snapshot.value == null) {
+                return const Center(child: Text("No Data Found"));
+              }
 
-      body: StreamBuilder<DatabaseEvent>(
-        stream: dbRef.onValue,
-        builder: (context, snapshot) {
-          if (!snapshot.hasData || snapshot.data!.snapshot.value == null) {
-            return const Center(child: Text("No Data Found"));
-          }
+              final data = Map<dynamic, dynamic>.from(
+                snapshot.data!.snapshot.value as Map,
+              );
 
-          final data = Map<dynamic, dynamic>.from(
-            snapshot.data!.snapshot.value as Map,
-          );
+              final list = data.entries.toList();
 
-          final list = data.entries.toList();
+              return ListView.builder(
+                itemCount: list.length,
+                itemBuilder: (context, index) {
+                  final key = list[index].key;
+                  final item = Map<String, dynamic>.from(list[index].value);
 
-          return ListView.builder(
-            itemCount: list.length,
-            itemBuilder: (context, index) {
-              final key = list[index].key;
-              final item = Map<String, dynamic>.from(list[index].value);
-
-              return Card(
-                child: ListTile(
-                  leading: const Icon(Icons.person),
-                  title: Text(item["name"] ?? ""),
-                  subtitle: Text(item["email"] ?? ""),
-
-                  trailing: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      // EDIT
-                      IconButton(
-                        icon: const Icon(Icons.edit, color: Colors.blue),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => AddButtonScreen(
-                                userKey: key,
-                                name: item["name"],
-                                email: item["email"],
-                              ),
-                            ),
-                          );
-                        },
+                  return Card(
+                    child: ListTile(
+                      tileColor: Color(0xFF4FEDD3),
+                      leading: const Icon(Icons.person),
+                      title: Text(
+                        item["name"] ?? "",
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      subtitle: Text(
+                        item["email"] ?? "",
+                        style: TextStyle(
+                          color: Colors.black,
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
 
-                      // DELETE (with popup)
-                      IconButton(
-                        icon: const Icon(Icons.delete, color: Colors.red),
-                        onPressed: () {
-                          showDeleteDialog(context, key);
-                        },
+                      trailing: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          // EDIT
+                          IconButton(
+                            icon: const Icon(Icons.edit, color: Colors.blue),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => AddButtonScreen(
+                                    userKey: key,
+                                    name: item["name"],
+                                    email: item["email"],
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+
+                          // DELETE (with popup)
+                          IconButton(
+                            icon: const Icon(Icons.delete, color: Colors.red),
+                            onPressed: () {
+                              showDeleteDialog(context, key);
+                            },
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                ),
+                    ),
+                  );
+                },
               );
             },
-          );
-        },
+          ),
+        ),
       ),
     );
   }
