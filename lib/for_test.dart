@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class ForTestScreen extends StatefulWidget {
   const ForTestScreen({super.key});
@@ -41,7 +42,19 @@ class _ForTestScreenState extends State<ForTestScreen> {
           ),
           SizedBox(
             height: 200,
-            child: Column(children: [Text("Test Size Box")]),
+            child: Column(
+              children: [
+                Text(
+                  "Test Size Box",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.yellow,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
