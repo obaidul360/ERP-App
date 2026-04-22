@@ -28,7 +28,14 @@ class _ForTestScreenState extends State<ForTestScreen> {
             height: 140,
             child: Column(
               children: [
-                Text("Width ", style: TextStyle(fontWeight: FontWeight.w200)),
+                Text(
+                  "Width ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w200,
+                    color: Colors.white,
+                    fontSize: 25,
+                  ),
+                ),
               ],
             ),
           ),
