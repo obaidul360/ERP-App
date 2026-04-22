@@ -23,6 +23,19 @@ class _ForTestScreenState extends State<ForTestScreen> {
             height: 200,
             child: Column(children: [Text("2nd Size Box")]),
           ),
+          SizedBox(height: 20),
+          SizedBox(
+            height: 140,
+            child: Column(
+              children: [
+                Text("Width ", style: TextStyle(fontWeight: FontWeight.w200)),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 200,
+            child: Column(children: [Text("Test Size Box")]),
+          ),
         ],
       ),
     );
