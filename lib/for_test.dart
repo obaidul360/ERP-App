@@ -13,6 +13,10 @@ class _ForTestScreenState extends State<ForTestScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("For test")),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add, size: 25),
+      ),
       backgroundColor: Colors.blue,
       body: SingleChildScrollView(
         reverse: true,
