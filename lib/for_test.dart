@@ -11,11 +11,12 @@ class ForTestScreen extends StatefulWidget {
 }
 
 class _ForTestScreenState extends State<ForTestScreen> {
-  Future softInfo()async{
+  Future softInfo() async {
     String name;
     String subName;
     var id;
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +24,7 @@ class _ForTestScreenState extends State<ForTestScreen> {
       floatingActionButton: FloatingActionButton(
         shape: Border.all(style: BorderStyle.solid),
         onPressed: () {},
-        child: Icon(Icons.add, size: 25,color: Colors.deepPurple),
+        child: Icon(Icons.add, size: 25, color: Colors.deepPurple),
       ),
       backgroundColor: Colors.blue,
       body: SingleChildScrollView(

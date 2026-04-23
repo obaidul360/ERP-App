@@ -1,7 +1,8 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-import 'api_model.dart';
+import '../api_model/api_model.dart';
+
 
 Future<List<TestModel>> fetchPosts() async {
   final response = await http.get(

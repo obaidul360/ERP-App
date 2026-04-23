@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'api_model.dart';
-import 'api_services.dart';
+import '../api_model/api_model.dart';
+import '../api_service/api_services.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -20,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("API Data")),
+      appBar: AppBar(title: Text("API Show Data")),
       body: FutureBuilder<List<TestModel>>(
         future: posts,
         builder: (context, snapshot) {
@@ -28,9 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
             return ListView.builder(
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(snapshot.data![index].subtitle),
-                );
+                return ListTile(title: Text(snapshot.data![index].subtitle));
               },
             );
           } else if (snapshot.hasError) {
