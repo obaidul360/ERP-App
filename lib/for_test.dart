@@ -9,6 +9,11 @@ class ForTestScreen extends StatefulWidget {
 }
 
 class _ForTestScreenState extends State<ForTestScreen> {
+  Future softInfo()async{
+    String name;
+    String subName;
+    var id;
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
