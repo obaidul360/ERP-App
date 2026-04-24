@@ -20,7 +20,17 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("API Show Data")),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          "API Show Data",
+          style: TextStyle(
+            fontWeight: FontWeight.w500,
+            color: Colors.black,
+            fontSize: 22,
+          ),
+        ),
+      ),
       body: FutureBuilder<List<TestModel>>(
         future: posts,
         builder: (context, snapshot) {
