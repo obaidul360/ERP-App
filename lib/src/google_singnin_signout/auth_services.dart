@@ -7,24 +7,24 @@ class AuthService {
   // Google Sign In
   Future<User?> signInWithGoogle() async {
     try {
-      final GoogleSignInAccount? googleUser =
-      await GoogleSignIn.instance.signIn();
+      final googleUser =
+      await GoogleSignIn.instance.authenticate();
 
       if (googleUser == null) return null;
 
-      final GoogleSignInAuthentication googleAuth =
-          googleUser.authentication;
+      final googleAuth = googleUser.authentication;
 
       final credential = GoogleAuthProvider.credential(
         idToken: googleAuth.idToken,
       );
 
       final userCredential =
-      await _auth.signInWithCredential(credential);
+      await FirebaseAuth.instance
+          .signInWithCredential(credential);
 
       return userCredential.user;
     } catch (e) {
-      print("SignIn Error: $e");
+      print(e);
       return null;
     }
   }
