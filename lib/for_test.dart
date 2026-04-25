@@ -16,6 +16,12 @@ class _ForTestScreenState extends State<ForTestScreen> {
     String subName;
     var id;
   }
+  Future sumFun() async {
+    var a;
+    var  b;
+    var c;
+    var sumationIs;
+  }
 
   @override
   Widget build(BuildContext context) {
