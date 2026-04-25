@@ -16,9 +16,10 @@ class _ForTestScreenState extends State<ForTestScreen> {
     String subName;
     var id;
   }
+
   Future sumFun() async {
     var a;
-    var  b;
+    var b;
     var c;
     var sumationIs;
   }
@@ -26,7 +27,17 @@ class _ForTestScreenState extends State<ForTestScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("For test")),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          "For test",
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w400,
+            color: Colors.black,
+          ),
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         shape: Border.all(style: BorderStyle.solid),
         onPressed: () {},
