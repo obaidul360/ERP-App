@@ -89,23 +89,25 @@ class _ForTestScreenState extends State<ForTestScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 10),
             Container(
               height: 200,
               width: double.infinity,
               decoration: BoxDecoration(
                 color: Colors.deepPurple,
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: Colors.yellow,width: 4),
-                image: DecorationImage(image: AssetImage("assetName"))
+                border: Border.all(color: Colors.yellow, width: 4),
+                image: DecorationImage(image: AssetImage("assetName")),
               ),
             ),
-            SizedBox(height: 10,),
-            Row(spacing: 10,children: [
-              Text("This is row", key: ValueKey("This is row"),),
-
-              Text("This"),
-            ],)
+            SizedBox(height: 10),
+            Row(
+              spacing: 10,
+              children: [
+                Expanded(child: Text("This is row", key: ValueKey("This is row"))),
+                Expanded(child: Text("This", style: TextStyle(fontWeight: FontWeight.w500))),
+              ],
+            ),
           ],
         ),
       ),
