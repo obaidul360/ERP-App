@@ -101,8 +101,9 @@ class _ForTestScreenState extends State<ForTestScreen> {
               ),
             ),
             SizedBox(height: 10,),
-            Row(children: [
-              Text("This is row"),
+            Row(spacing: 10,children: [
+              Text("This is row", key: ValueKey("This is row"),),
+
               Text("This"),
             ],)
           ],
