@@ -32,6 +32,7 @@ class _AddButtonScreenState extends State<AddButtonScreen> {
       emailCon.text = widget.email ?? "";
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,6 +44,7 @@ class _AddButtonScreenState extends State<AddButtonScreen> {
         child: Column(
           children: [
             TextField(
+              keyboardType: TextInputType.name,
               controller: nameCon,
               decoration: const InputDecoration(
                 hintText: "Enter Name",
@@ -51,6 +53,7 @@ class _AddButtonScreenState extends State<AddButtonScreen> {
             ),
             const SizedBox(height: 10),
             TextField(
+              keyboardType: TextInputType.emailAddress,
               controller: emailCon,
               decoration: const InputDecoration(
                 hintText: "Enter Email",
@@ -81,7 +84,7 @@ class _AddButtonScreenState extends State<AddButtonScreen> {
                 }
                 Navigator.pop(context);
               },
-              child: Text(widget.userKey == null ? "Add" : "Update"),
+              child: Text(widget.userKey == null ? "Submit" : "Update"),
             ),
           ],
         ),
