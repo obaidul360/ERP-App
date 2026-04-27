@@ -101,12 +101,34 @@ class _ForTestScreenState extends State<ForTestScreen> {
               ),
             ),
             SizedBox(height: 10),
-            Row(
-              spacing: 10,
-              children: [
-                Expanded(child: Text("This is row", key: ValueKey("This is row"))),
-                Expanded(child: Text("This", style: TextStyle(fontWeight: FontWeight.w500))),
-              ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                spacing: 10,
+                children: [
+                  Expanded(
+                    child: Text("This is row", key: ValueKey("This is row")),
+                  ),
+                  Expanded(
+                    child: Text(
+                      "This is Expended Row",
+                      style: TextStyle(
+                        fontSize: 22,
+                        color: Colors.blue,
+                        overflow: TextOverflow.clip,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      height: 50,
+                      width: 90,
+                      decoration: BoxDecoration(color: Colors.red),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
