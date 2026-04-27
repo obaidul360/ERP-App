@@ -99,7 +99,12 @@ class _ForTestScreenState extends State<ForTestScreen> {
                 border: Border.all(color: Colors.yellow,width: 4),
                 image: DecorationImage(image: AssetImage("assetName"))
               ),
-            )
+            ),
+            SizedBox(height: 10,),
+            Row(children: [
+              Text("This is row"),
+              Text("This"),
+            ],)
           ],
         ),
       ),
