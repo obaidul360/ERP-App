@@ -13,6 +13,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Scaffold(
       backgroundColor: Colors.blueAccent,
       appBar: AppBar(title: Text("Auto Text"), centerTitle: true),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Text("Auto Text",style: TextStyle(fontSize: 25,color: Colors.white),),
+            Icon(Icons.message,size: 30,),
+
+          ],
+        ),
+      ),
     );
   }
 }
