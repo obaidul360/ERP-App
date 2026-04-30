@@ -128,6 +128,7 @@ class _ForTestScreenState extends State<ForTestScreen> {
                     ),
                   ),
                   ListView.builder(
+                    itemCount: 10,
                     itemBuilder: (context, index) {
                       return ListTile(title: Text("Obaidul"));
                     },
