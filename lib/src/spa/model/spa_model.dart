@@ -10,7 +10,4 @@ class SpaModel {
     required this.title,
     required this.price,
   });
-
-
-
 }
