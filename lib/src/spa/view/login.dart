@@ -15,10 +15,25 @@ class _SignUpScreenState extends State<SignUpScreen> {
       appBar: AppBar(title: Text("Auto Text"), centerTitle: true),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text("Auto Text",style: TextStyle(fontSize: 25,color: Colors.white),),
-            Icon(Icons.message,size: 30,),
-
+            Icon(Icons.message, size: 60, color: Colors.white),
+            SizedBox(height: 10),
+            Center(
+              child: Text(
+                "Auto Text",
+                style: TextStyle(fontSize: 25, color: Colors.white),
+              ),
+            ),
+            SizedBox(height: 10),
+            TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide: BorderSide(color: Colors.white, width: 2),
+                ),
+              ),
+            ),
           ],
         ),
       ),
