@@ -29,8 +29,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
             TextField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide(color: Colors.white, width: 2),
+                  borderRadius: BorderRadius.circular(15),
+                  borderSide: BorderSide(color: Colors.red, width: 5),
                 ),
               ),
             ),
