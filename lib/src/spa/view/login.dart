@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -27,23 +29,34 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
               ),
               SizedBox(height: 10),
-              TextField(
-                style: TextStyle(color: Colors.white),
+              TextFormField(
+                keyboardType: TextInputType.name,
                 decoration: InputDecoration(
+                  hintText: "Your Name",
                   filled: true,
                   fillColor: Colors.white,
-                  border: OutlineInputBorder(
+                  focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
-                    borderSide: BorderSide(color: Colors.grey, width: 5),
+                    borderSide: BorderSide(color: Colors.pink, width: 5),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(color: Colors.pink, width: 5),
                   ),
                 ),
               ),
               SizedBox(height: 10),
               TextFormField(
+                keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
+                  hintText: "Your Phone",
                   filled: true,
                   fillColor: Colors.white,
-                  border: OutlineInputBorder(
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(color: Colors.yellow, width: 5),
+                  ),
+                  focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
                     borderSide: BorderSide(color: Colors.yellow, width: 5),
                   ),
@@ -52,15 +65,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
               SizedBox(height: 20),
               TextField(
+                keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
+                  hintText: "Your email",
                   filled: true,
                   fillColor: Colors.white,
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
-                    borderSide: BorderSide(
-                      color: Colors.red,
-                      width: 4
-                    ),
+                    borderSide: BorderSide(color: Colors.red, width: 4),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
@@ -68,6 +80,29 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       color: Colors.red, // Keeps it red when user clicks it
                       width: 4,
                     ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 10),
+              TextField(
+                keyboardType: TextInputType.visiblePassword,
+                decoration: InputDecoration(
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      print("obje44444444ct");
+                    },
+                    icon: Icon(Icons.remove_red_eye),
+                  ),
+                  hintText: "Your Password",
+                  filled: true,
+                  fillColor: Colors.white,
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(color: Colors.limeAccent, width: 5),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(color: Colors.limeAccent, width: 5),
                   ),
                 ),
               ),
