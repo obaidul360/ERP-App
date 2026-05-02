@@ -147,6 +147,19 @@ class _ForTestScreenState extends State<ForTestScreen> {
                       return ListTile(title: Text("Korim"));
                     },
                   ),
+                  ListView.builder(
+                    itemCount: 10,
+                    itemBuilder: (context, index) {
+                      return ListTile(title: Text("Toslim"));
+                    },
+                  ),
+                  SizedBox(height: 20,),
+                  ListView.builder(
+                    itemCount: 10,
+                    itemBuilder: (context, index) {
+                      return ListTile(title: Text("Korim"));
+                    },
+                  ),
                 ],
               ),
             ),
