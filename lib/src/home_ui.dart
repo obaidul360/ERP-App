@@ -132,8 +132,6 @@ class _HomeUiScreenState extends State<HomeUiScreen> {
                               showDeleteDialog(context, key);
                             },
                           ),
-                          SizedBox(height: 10,),
-                          Text("for git pudate"),
                         ],
                       ),
                     ),
