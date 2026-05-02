@@ -12,76 +12,67 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blueAccent,
-      appBar: AppBar(title: Text("Auto Text"), centerTitle: true),
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Icon(Icons.message, size: 60, color: Colors.white),
-            SizedBox(height: 10),
-            Center(
-              child: Text(
-                "Auto Text",
-                style: TextStyle(fontSize: 25, color: Colors.white),
-              ),
-            ),
-            SizedBox(height: 10),
-            TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
-                  borderSide: BorderSide(color: Colors.red, width: 5),
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(Icons.message, size: 60, color: Colors.white),
+              SizedBox(height: 10),
+              Center(
+                child: Text(
+                  "Auto Text",
+                  style: TextStyle(fontSize: 25, color: Colors.white),
                 ),
               ),
-            ),
-            Center(
-              child: Text(
-                "fir gurt ",
-                style: TextStyle(fontSize: 25, color: Colors.white),
-              ),
-            ),
-            SizedBox(height: 10),
-            TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
-                  borderSide: BorderSide(color: Colors.red, width: 5),
+              SizedBox(height: 10),
+              TextField(
+                style: TextStyle(color: Colors.white),
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(color: Colors.grey, width: 5),
+                  ),
                 ),
               ),
-            ),
-            Icon(Icons.message, size: 60, color: Colors.white),
-            SizedBox(height: 10),
-            Center(
-              child: Text(
-                "Auto Text",
-                style: TextStyle(fontSize: 25, color: Colors.white),
-              ),
-            ),
-            SizedBox(height: 10),
-            TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
-                  borderSide: BorderSide(color: Colors.red, width: 5),
+              SizedBox(height: 10),
+              TextFormField(
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(color: Colors.yellow, width: 5),
+                  ),
                 ),
               ),
-            ),
-            Center(
-              child: Text(
-                "fir gurt ",
-                style: TextStyle(fontSize: 25, color: Colors.white),
-              ),
-            ),
-            SizedBox(height: 10),
-            TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
-                  borderSide: BorderSide(color: Colors.red, width: 5),
+
+              SizedBox(height: 20),
+              TextField(
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(
+                      color: Colors.red,
+                      width: 4
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(
+                      color: Colors.red, // Keeps it red when user clicks it
+                      width: 4,
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
