@@ -49,6 +49,38 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
               ),
             ),
+            Icon(Icons.message, size: 60, color: Colors.white),
+            SizedBox(height: 10),
+            Center(
+              child: Text(
+                "Auto Text",
+                style: TextStyle(fontSize: 25, color: Colors.white),
+              ),
+            ),
+            SizedBox(height: 10),
+            TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15),
+                  borderSide: BorderSide(color: Colors.red, width: 5),
+                ),
+              ),
+            ),
+            Center(
+              child: Text(
+                "fir gurt ",
+                style: TextStyle(fontSize: 25, color: Colors.white),
+              ),
+            ),
+            SizedBox(height: 10),
+            TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15),
+                  borderSide: BorderSide(color: Colors.red, width: 5),
+                ),
+              ),
+            ),
           ],
         ),
       ),
