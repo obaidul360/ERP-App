@@ -34,6 +34,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
               ),
             ),
+            Center(
+              child: Text(
+                "fir gurt ",
+                style: TextStyle(fontSize: 25, color: Colors.white),
+              ),
+            ),
+            SizedBox(height: 10),
+            TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15),
+                  borderSide: BorderSide(color: Colors.red, width: 5),
+                ),
+              ),
+            ),
           ],
         ),
       ),
