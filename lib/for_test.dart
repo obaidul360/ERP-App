@@ -24,6 +24,13 @@ class _ForTestScreenState extends State<ForTestScreen> {
     var sumationIs;
   }
 
+  final _formKey = GlobalKey<FormState>();
+
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  bool isObscure = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -133,14 +140,14 @@ class _ForTestScreenState extends State<ForTestScreen> {
                       return ListTile(title: Text("Obaidul"));
                     },
                   ),
-                  SizedBox(height: 12,),
+                  SizedBox(height: 12),
                   ListView.builder(
                     itemCount: 10,
                     itemBuilder: (context, index) {
                       return ListTile(title: Text("Toslim"));
                     },
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(height: 20),
                   ListView.builder(
                     itemCount: 10,
                     itemBuilder: (context, index) {
@@ -153,14 +160,14 @@ class _ForTestScreenState extends State<ForTestScreen> {
                       return ListTile(title: Text("Toslim"));
                     },
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(height: 20),
                   ListView.builder(
                     itemCount: 10,
                     itemBuilder: (context, index) {
                       return ListTile(title: Text("Korim"));
                     },
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(height: 10),
                   Center(
                     child: SingleChildScrollView(
                       child: Padding(
@@ -177,7 +184,6 @@ class _ForTestScreenState extends State<ForTestScreen> {
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-
                                   const Text(
                                     "Welcome Back 👋",
                                     style: TextStyle(
@@ -190,6 +196,7 @@ class _ForTestScreenState extends State<ForTestScreen> {
 
                                   /// EMAIL FIELD
                                   TextFormField(
+                                    keyboardType: TextInputType.emailAddress,
                                     controller: emailController,
                                     decoration: InputDecoration(
                                       labelText: "Email",
@@ -213,6 +220,7 @@ class _ForTestScreenState extends State<ForTestScreen> {
 
                                   /// PASSWORD FIELD
                                   TextFormField(
+                                    keyboardType: TextInputType.visiblePassword,
                                     controller: passwordController,
                                     obscureText: isObscure,
                                     decoration: InputDecoration(
@@ -251,12 +259,16 @@ class _ForTestScreenState extends State<ForTestScreen> {
                                     child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                         shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(15),
+                                          borderRadius: BorderRadius.circular(
+                                            15,
+                                          ),
                                         ),
                                       ),
                                       onPressed: () {
                                         if (_formKey.currentState!.validate()) {
-                                          ScaffoldMessenger.of(context).showSnackBar(
+                                          ScaffoldMessenger.of(
+                                            context,
+                                          ).showSnackBar(
                                             const SnackBar(
                                               content: Text("Form Submitted"),
                                             ),
@@ -269,7 +281,6 @@ class _ForTestScreenState extends State<ForTestScreen> {
                                       ),
                                     ),
                                   ),
-
                                 ],
                               ),
                             ),
