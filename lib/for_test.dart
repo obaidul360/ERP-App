@@ -385,6 +385,24 @@ class _ForTestScreenState extends State<ForTestScreen> {
                 Text("Bottom"),
               ],
             ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("Email"),
+                SizedBox(height: 5),
+                TextField(),
+
+                SizedBox(height: 15),
+
+                Text("Password"),
+                SizedBox(height: 5),
+                TextField(),
+
+                SizedBox(height: 20),
+
+                ElevatedButton(onPressed: () {}, child: Text("Login")),
+              ],
+            ),
           ],
         ),
       ),
