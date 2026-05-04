@@ -305,6 +305,77 @@ class _ForTestScreenState extends State<ForTestScreen> {
                 ],
               ),
             ),
+            Center(
+              child: Container(
+                width: 320,
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                  gradient: const LinearGradient(
+                    colors: [Color(0xff6a11cb), Color(0xff2575fc)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.2),
+                      blurRadius: 15,
+                      offset: const Offset(0, 8),
+                    ),
+                  ],
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    /// PROFILE IMAGE
+                    const CircleAvatar(
+                      radius: 40,
+                      backgroundImage: NetworkImage(
+                        "https://i.pravatar.cc/150?img=3",
+                      ),
+                    ),
+
+                    const SizedBox(height: 12),
+
+                    /// NAME
+                    const Text(
+                      "Md Obaidul Islam",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+
+                    const SizedBox(height: 5),
+
+                    /// EMAIL
+                    const Text(
+                      "obaidul@email.com",
+                      style: TextStyle(color: Colors.white70),
+                    ),
+
+                    const SizedBox(height: 15),
+
+                    /// BUTTON
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
+                          foregroundColor: Colors.blue,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                        ),
+                        onPressed: () {},
+                        child: const Text("View Profile"),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
