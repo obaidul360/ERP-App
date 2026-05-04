@@ -160,6 +160,124 @@ class _ForTestScreenState extends State<ForTestScreen> {
                       return ListTile(title: Text("Korim"));
                     },
                   ),
+                  SizedBox(height: 10,),
+                  Center(
+                    child: SingleChildScrollView(
+                      child: Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Card(
+                          elevation: 8,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(20),
+                            child: Form(
+                              key: _formKey,
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+
+                                  const Text(
+                                    "Welcome Back 👋",
+                                    style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+
+                                  const SizedBox(height: 20),
+
+                                  /// EMAIL FIELD
+                                  TextFormField(
+                                    controller: emailController,
+                                    decoration: InputDecoration(
+                                      labelText: "Email",
+                                      prefixIcon: const Icon(Icons.email),
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(15),
+                                      ),
+                                    ),
+                                    validator: (value) {
+                                      if (value == null || value.isEmpty) {
+                                        return "Enter email";
+                                      }
+                                      if (!value.contains('@')) {
+                                        return "Invalid email";
+                                      }
+                                      return null;
+                                    },
+                                  ),
+
+                                  const SizedBox(height: 15),
+
+                                  /// PASSWORD FIELD
+                                  TextFormField(
+                                    controller: passwordController,
+                                    obscureText: isObscure,
+                                    decoration: InputDecoration(
+                                      labelText: "Password",
+                                      prefixIcon: const Icon(Icons.lock),
+                                      suffixIcon: IconButton(
+                                        icon: Icon(
+                                          isObscure
+                                              ? Icons.visibility
+                                              : Icons.visibility_off,
+                                        ),
+                                        onPressed: () {
+                                          setState(() {
+                                            isObscure = !isObscure;
+                                          });
+                                        },
+                                      ),
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(15),
+                                      ),
+                                    ),
+                                    validator: (value) {
+                                      if (value == null || value.length < 6) {
+                                        return "Password must be 6+ chars";
+                                      }
+                                      return null;
+                                    },
+                                  ),
+
+                                  const SizedBox(height: 25),
+
+                                  /// BUTTON
+                                  SizedBox(
+                                    width: double.infinity,
+                                    height: 50,
+                                    child: ElevatedButton(
+                                      style: ElevatedButton.styleFrom(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(15),
+                                        ),
+                                      ),
+                                      onPressed: () {
+                                        if (_formKey.currentState!.validate()) {
+                                          ScaffoldMessenger.of(context).showSnackBar(
+                                            const SnackBar(
+                                              content: Text("Form Submitted"),
+                                            ),
+                                          );
+                                        }
+                                      },
+                                      child: const Text(
+                                        "Login",
+                                        style: TextStyle(fontSize: 16),
+                                      ),
+                                    ),
+                                  ),
+
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
