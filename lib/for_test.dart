@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:http/http.dart';
 
+import 'info_received.dart';
+
 class ForTestScreen extends StatefulWidget {
   const ForTestScreen({super.key});
 
@@ -265,6 +267,7 @@ class _ForTestScreenState extends State<ForTestScreen> {
                                         ),
                                       ),
                                       onPressed: () {
+
                                         if (_formKey.currentState!.validate()) {
                                           ScaffoldMessenger.of(
                                             context,
@@ -273,6 +276,7 @@ class _ForTestScreenState extends State<ForTestScreen> {
                                               content: Text("Form Submitted"),
                                             ),
                                           );
+                                          Navigator.push(context, MaterialPageRoute(builder: (context)=>InfoReceivedScreen(name: '', email: '',)));
                                         }
                                       },
                                       child: const Text(
