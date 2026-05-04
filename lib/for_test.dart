@@ -267,7 +267,6 @@ class _ForTestScreenState extends State<ForTestScreen> {
                                         ),
                                       ),
                                       onPressed: () {
-
                                         if (_formKey.currentState!.validate()) {
                                           ScaffoldMessenger.of(
                                             context,
@@ -276,7 +275,17 @@ class _ForTestScreenState extends State<ForTestScreen> {
                                               content: Text("Form Submitted"),
                                             ),
                                           );
-                                          Navigator.push(context, MaterialPageRoute(builder: (context)=>InfoReceivedScreen(name: '', email: '',)));
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  InfoReceivedScreen(
+                                                    name: emailController.text,
+                                                    email:
+                                                        passwordController.text,
+                                                  ),
+                                            ),
+                                          );
                                         }
                                       },
                                       child: const Text(
