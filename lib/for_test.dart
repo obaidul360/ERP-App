@@ -376,6 +376,15 @@ class _ForTestScreenState extends State<ForTestScreen> {
                 ),
               ),
             ),
+            Column(
+              children: [
+                Expanded(flex: 1, child: Container(color: Colors.red)),
+                Expanded(flex: 2, child: Container(color: Colors.blue)),
+                Text("Top"),
+                Text("Middle"),
+                Text("Bottom"),
+              ],
+            ),
           ],
         ),
       ),
