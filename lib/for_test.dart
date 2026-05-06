@@ -462,6 +462,17 @@ class _ForTestScreenState extends State<ForTestScreen> {
               subtitle: Text("Edit profile"),
               trailing: Icon(Icons.arrow_forward_ios),
             ),
+            SizedBox(height: 10),
+            Stack(
+              children: [
+                Image.network("https://via.placeholder.com/300"),
+                Positioned(
+                  bottom: 10,
+                  left: 10,
+                  child: Text("Product", style: TextStyle(color: Colors.white)),
+                ),
+              ],
+            ),
           ],
         ),
       ),
