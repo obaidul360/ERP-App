@@ -413,6 +413,49 @@ class _ForTestScreenState extends State<ForTestScreen> {
                 );
               },
             ),
+            SizedBox(height: 10,),
+            GridView.builder(
+              padding: EdgeInsets.all(10),
+              itemCount: 20,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                childAspectRatio: 0.75,
+              ),
+              itemBuilder: (context, index) {
+                return Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.vertical(
+                              top: Radius.circular(15),
+                            ),
+                            color: Colors.grey[300],
+                          ),
+                          child: Center(child: Icon(Icons.image, size: 50)),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.all(8),
+                        child: Text("Product $index"),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 8),
+                        child: Text("\$100"),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            )
+
           ],
         ),
       ),
