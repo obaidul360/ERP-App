@@ -413,7 +413,7 @@ class _ForTestScreenState extends State<ForTestScreen> {
                 );
               },
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 10),
             GridView.builder(
               padding: EdgeInsets.all(10),
               itemCount: 20,
@@ -454,8 +454,14 @@ class _ForTestScreenState extends State<ForTestScreen> {
                   ),
                 );
               },
-            )
-
+            ),
+            SizedBox(height: 10),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Profile"),
+              subtitle: Text("Edit profile"),
+              trailing: Icon(Icons.arrow_forward_ios),
+            ),
           ],
         ),
       ),
