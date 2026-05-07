@@ -40,11 +40,21 @@ class _SearchBarExampleState extends State<SearchBarExample> {
     });
   }
 
+  bool isAnimate = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Search Bar")),
+      appBar: AppBar(title: const Text("Search Bar And Animation Screen")),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            isAnimate = !isAnimate;
+          });
+        },
 
+        child: const Icon(Icons.play_arrow),
+      ),
       body: Column(
         children: [
           // Search Bar
@@ -72,6 +82,23 @@ class _SearchBarExampleState extends State<SearchBarExample> {
               itemBuilder: (context, index) {
                 return Card(child: ListTile(title: Text(filteredItems[index])));
               },
+            ),
+          ),
+          SizedBox(height: 15),
+          Center(
+            child: AnimatedContainer(
+              duration: const Duration(seconds: 1),
+
+              curve: Curves.easeInOut,
+
+              width: isAnimate ? 250 : 120,
+              height: isAnimate ? 250 : 120,
+
+              decoration: BoxDecoration(
+                color: isAnimate ? Colors.purple : Colors.orange,
+
+                borderRadius: BorderRadius.circular(isAnimate ? 30 : 5),
+              ),
             ),
           ),
         ],
