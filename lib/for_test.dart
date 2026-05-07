@@ -15,6 +15,13 @@ class _SearchBarExampleState extends State<SearchBarExample> {
     "Mango",
     "Grapes",
     "Watermelon",
+    "Pizza",
+    "Cheese",
+    "burger",
+    "Tacos/Quesadillas",
+    "Chicken",
+    "Nuggets",
+    "Soup(Tomato, Clam Chowder)Caesar Salad",
   ];
 
   List<String> filteredItems = [];
