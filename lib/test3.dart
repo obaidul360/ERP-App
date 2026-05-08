@@ -101,6 +101,43 @@ class _SearchBarExampleState extends State<SearchBarExample> {
               ),
             ),
           ),
+          SizedBox(height: 10,),
+          ListView(
+            children: const [
+
+              ListTile(
+                leading: CircleAvatar(
+                  child: Icon(Icons.person),
+                ),
+
+                title: Text("Obaidul Islam"),
+
+                subtitle: Text("Flutter Developer"),
+
+                trailing: Icon(Icons.arrow_forward_ios),
+
+                tileColor: Colors.white,
+              ),
+
+              Divider(),
+
+              ListTile(
+                leading: Icon(Icons.email),
+                title: Text("Email"),
+                subtitle: Text("example@gmail.com"),
+                trailing: Icon(Icons.send),
+              ),
+
+              Divider(),
+
+              ListTile(
+                leading: Icon(Icons.phone),
+                title: Text("Phone"),
+                subtitle: Text("+880123456789"),
+                trailing: Icon(Icons.call),
+              ),
+            ],
+          ),
         ],
       ),
     );
