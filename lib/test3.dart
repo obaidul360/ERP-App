@@ -1,3 +1,4 @@
+import 'package:erp_app/testdetails.dart';
 import 'package:flutter/material.dart';
 
 class SearchBarExample extends StatefulWidget {
@@ -31,6 +32,28 @@ class _SearchBarExampleState extends State<SearchBarExample> {
     super.initState();
     filteredItems = allItems;
   }
+  final List<Map<String, dynamic>> products = const [
+    {
+      "name": "iPhone 15",
+      "price": "\$999",
+      "image":
+      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
+    },
+    {
+      "name": "Laptop",
+      "price": "\$1200",
+      "image":
+      "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+    },
+    {
+      "name": "Headphone",
+      "price": "\$200",
+      "image":
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+    },
+  ];
+
+
 
   void searchItem(String value) {
     setState(() {
@@ -138,7 +161,41 @@ class _SearchBarExampleState extends State<SearchBarExample> {
               ),
             ],
           ),
-        ],
+          SizedBox(height: 10,),
+    ListView.builder(
+    itemCount: products.length,
+
+    itemBuilder: (context, index) {
+    final product = products[index];
+
+    return Card(
+    margin: const EdgeInsets.all(10),
+
+    child: ListTile(
+    leading: Image.network(
+    product["image"],
+    width: 60,
+    fit: BoxFit.cover,
+    ),
+
+    title: Text(product["name"]),
+
+    subtitle: Text(product["price"]),
+
+    trailing: const Icon(Icons.arrow_forward_ios),
+
+    onTap: () {
+    Navigator.push(
+    context,
+    MaterialPageRoute(
+    builder: (context) => DetailsPage(
+    name: product["name"],
+    price: product["price"],
+    image: product["image"],
+    ));
+
+
+
       ),
     );
   }
