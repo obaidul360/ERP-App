@@ -74,6 +74,7 @@ class _SearchBarExampleState extends State<SearchBarExample> {
               },
             ),
           ),
+          SizedBox(height: 10),
           Text(
             "Test for git update",
             style: TextStyle(
@@ -82,6 +83,15 @@ class _SearchBarExampleState extends State<SearchBarExample> {
               color: Colors.limeAccent,
             ),
           ),
+          SizedBox(height: 20),
+          Container(
+            width: 200,
+            height: 100,
+            color: Colors.blue,
+            child: Text("Hello Flutter"),
+          ),
+          SizedBox(height: 20),
+          Column(children: [Text("First"), Text("Second"), Text("Third")]),
         ],
       ),
     );
