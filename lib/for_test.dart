@@ -74,6 +74,14 @@ class _SearchBarExampleState extends State<SearchBarExample> {
               },
             ),
           ),
+          Text(
+            "Test for git update",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w300,
+              color: Colors.limeAccent,
+            ),
+          ),
         ],
       ),
     );
