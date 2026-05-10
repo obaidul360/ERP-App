@@ -40,6 +40,13 @@ class _SearchBarExampleState extends State<SearchBarExample> {
     });
   }
 
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  final _formKey = GlobalKey<FormState>();
+
+  bool isPasswordHidden = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,7 +99,7 @@ class _SearchBarExampleState extends State<SearchBarExample> {
           ),
           SizedBox(height: 20),
           Column(children: [Text("First"), Text("Second"), Text("Third")]),
-          SizedBox(height: 20,),
+          SizedBox(height: 20),
           Center(
             child: Padding(
               padding: const EdgeInsets.all(20),
@@ -103,12 +110,7 @@ class _SearchBarExampleState extends State<SearchBarExample> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-
-                    const Icon(
-                      Icons.lock,
-                      size: 80,
-                      color: Colors.blue,
-                    ),
+                    const Icon(Icons.lock, size: 80, color: Colors.blue),
 
                     const SizedBox(height: 20),
 
@@ -189,18 +191,12 @@ class _SearchBarExampleState extends State<SearchBarExample> {
 
                       child: ElevatedButton(
                         onPressed: () {
-
                           if (_formKey.currentState!.validate()) {
-
                             String email = emailController.text;
                             String password = passwordController.text;
 
                             ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text(
-                                  "Login Success\n$email",
-                                ),
-                              ),
+                              SnackBar(content: Text("Login Success\n$email")),
                             );
                           }
                         },
@@ -217,7 +213,6 @@ class _SearchBarExampleState extends State<SearchBarExample> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-
                         const Text("Don't have an account?"),
 
                         TextButton(
@@ -231,8 +226,113 @@ class _SearchBarExampleState extends State<SearchBarExample> {
               ),
             ),
           ),
-        ],
+          SizedBox(height: 20),
+          TextButton(
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) {
+                  TextEditingController resetController =
+                      TextEditingController();
 
+                  return AlertDialog(
+                    title: const Text("Forgot Password"),
+
+                    content: TextField(
+                      controller: resetController,
+                      decoration: const InputDecoration(
+                        hintText: "Enter your email",
+                      ),
+                    ),
+
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: const Text("Cancel"),
+                      ),
+
+                      ElevatedButton(
+                        onPressed: () {
+                          String email = resetController.text;
+
+                          Navigator.pop(context);
+
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                "Password reset link sent to $email",
+                              ),
+                            ),
+                          );
+                        },
+                        child: const Text("Send"),
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
+            child: const Text("Forgot Password?"),
+          ),
+          SizedBox(height: 20),
+          const SizedBox(height: 10),
+
+          /// FORGOT PASSWORD
+          Align(
+            alignment: Alignment.centerRight,
+            child: TextButton(
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    TextEditingController resetController =
+                        TextEditingController();
+
+                    return AlertDialog(
+                      title: const Text("Forgot Password"),
+
+                      content: TextField(
+                        controller: resetController,
+                        decoration: const InputDecoration(
+                          hintText: "Enter your email",
+                        ),
+                      ),
+
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Text("Cancel"),
+                        ),
+
+                        ElevatedButton(
+                          onPressed: () {
+                            String email = resetController.text;
+
+                            Navigator.pop(context);
+
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                  "Password reset link sent to $email",
+                                ),
+                              ),
+                            );
+                          },
+                          child: const Text("Send"),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
+              child: const Text("Forgot Password?"),
+            ),
+          ),
+        ],
       ),
     );
   }
