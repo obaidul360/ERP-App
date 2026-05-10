@@ -203,7 +203,11 @@ class _SearchBarExampleState extends State<SearchBarExample> {
 
                         child: const Text(
                           "Login",
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 30,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ),
@@ -213,11 +217,25 @@ class _SearchBarExampleState extends State<SearchBarExample> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text("Don't have an account?"),
+                        const Text(
+                          "Don't have an account?",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 30,
+                            color: Colors.black,
+                          ),
+                        ),
 
                         TextButton(
                           onPressed: () {},
-                          child: const Text("Sign Up"),
+                          child: const Text(
+                            "Sign Up",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 30,
+                              color: Colors.black,
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -236,7 +254,14 @@ class _SearchBarExampleState extends State<SearchBarExample> {
                       TextEditingController();
 
                   return AlertDialog(
-                    title: const Text("Forgot Password"),
+                    title: const Text(
+                      "Forgot Password",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 30,
+                        color: Colors.black,
+                      ),
+                    ),
 
                     content: TextField(
                       controller: resetController,
