@@ -92,7 +92,147 @@ class _SearchBarExampleState extends State<SearchBarExample> {
           ),
           SizedBox(height: 20),
           Column(children: [Text("First"), Text("Second"), Text("Third")]),
+          SizedBox(height: 20,),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+
+              child: Form(
+                key: _formKey,
+
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+
+                    const Icon(
+                      Icons.lock,
+                      size: 80,
+                      color: Colors.blue,
+                    ),
+
+                    const SizedBox(height: 20),
+
+                    const Text(
+                      "Login",
+                      style: TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+
+                    const SizedBox(height: 30),
+
+                    /// EMAIL
+                    TextFormField(
+                      controller: emailController,
+
+                      decoration: InputDecoration(
+                        hintText: "Enter Email",
+                        prefixIcon: const Icon(Icons.email),
+
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Please Enter Email";
+                        }
+                        return null;
+                      },
+                    ),
+
+                    const SizedBox(height: 20),
+
+                    /// PASSWORD
+                    TextFormField(
+                      controller: passwordController,
+                      obscureText: isPasswordHidden,
+
+                      decoration: InputDecoration(
+                        hintText: "Enter Password",
+                        prefixIcon: const Icon(Icons.lock),
+
+                        suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              isPasswordHidden = !isPasswordHidden;
+                            });
+                          },
+                          icon: Icon(
+                            isPasswordHidden
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                          ),
+                        ),
+
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Please Enter Password";
+                        }
+                        return null;
+                      },
+                    ),
+
+                    const SizedBox(height: 30),
+
+                    /// LOGIN BUTTON
+                    SizedBox(
+                      width: double.infinity,
+                      height: 55,
+
+                      child: ElevatedButton(
+                        onPressed: () {
+
+                          if (_formKey.currentState!.validate()) {
+
+                            String email = emailController.text;
+                            String password = passwordController.text;
+
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                  "Login Success\n$email",
+                                ),
+                              ),
+                            );
+                          }
+                        },
+
+                        child: const Text(
+                          "Login",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      ),
+                    ),
+
+                    const SizedBox(height: 20),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+
+                        const Text("Don't have an account?"),
+
+                        TextButton(
+                          onPressed: () {},
+                          child: const Text("Sign Up"),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
         ],
+
       ),
     );
   }
