@@ -42,6 +42,7 @@ class _SearchBarExampleState extends State<SearchBarExample> {
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final password = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
 
@@ -275,7 +276,14 @@ class _SearchBarExampleState extends State<SearchBarExample> {
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        child: const Text("Cancel"),
+                        child: const Text(
+                          "Cancel",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 30,
+                            color: Colors.black,
+                          ),
+                        ),
                       ),
 
                       ElevatedButton(
