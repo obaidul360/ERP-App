@@ -1,9 +1,18 @@
-class Person {
-  String name = "Obaidul";
-  int age = 20;
+class Student {
+  String name;
+  int roll;
 
-  void showInfo() {
-    print("Name: $name");
-    print("Age: $age");
-  }
+  Student(this.name, this.roll);
+
+  // Named Constructor
+  Student.guest() : name = "Guest", roll = 0;
+}
+
+void main() {
+  Student s1 = Student("Rahim", 10);
+
+  Student s2 = Student.guest();
+
+  print(s1.name);
+  print(s2.name);
 }
