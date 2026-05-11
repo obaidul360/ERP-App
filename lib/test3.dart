@@ -193,13 +193,17 @@ class _SearchBarExampleState extends State<SearchBarExample> {
               );
             },
           ),
-          Center(
-            child: Card(
-              child: Padding(
-                padding: EdgeInsets.all(20),
-                child: Text("Hello Flutter", style: TextStyle(fontSize: 20)),
-              ),
-            ),
+          ListView.builder(
+            itemCount: 5,
+            itemBuilder: (context, index) {
+              return Card(
+                child: ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text("User $index"),
+                  subtitle: Text("Flutter Developer"),
+                ),
+              );
+            },
           ),
         ],
       ),
