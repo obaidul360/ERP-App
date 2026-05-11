@@ -16,3 +16,21 @@ void main() {
   print(s1.name);
   print(s2.name);
 }
+
+abstract class Payment {
+  void pay();
+}
+
+class BkashPayment extends Payment {
+  @override
+  void pay() {
+    print("Paid with Bkash");
+  }
+}
+
+class NagadPayment extends Payment {
+  @override
+  void pay() {
+    print("Paid with Nagad");
+  }
+}
