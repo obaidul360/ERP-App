@@ -193,6 +193,14 @@ class _SearchBarExampleState extends State<SearchBarExample> {
               );
             },
           ),
+          Center(
+            child: Card(
+              child: Padding(
+                padding: EdgeInsets.all(20),
+                child: Text("Hello Flutter", style: TextStyle(fontSize: 20)),
+              ),
+            ),
+          ),
         ],
       ),
     );
